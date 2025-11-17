@@ -173,11 +173,21 @@ const Hero = () => {
 
             {/* Signature */}
             <div className="text-right mt-12 mr-8">
-              <img 
-                src={theme === "dark" ? signatureWhite : signatureBlack} 
-                alt="Pulpor signature" 
-                className="h-16 ml-auto"
-              />
+              <div className="relative inline-block h-16">
+                {/* Preload and cross-fade to avoid flicker on theme switch */}
+                <img
+                  src={signatureWhite}
+                  alt={theme === "dark" ? "Pulpor signature" : ""}
+                  aria-hidden={theme === "dark" ? false : true}
+                  className={`h-16 ml-auto transition-opacity duration-300 ${theme === "dark" ? "opacity-100" : "opacity-0"}`}
+                />
+                <img
+                  src={signatureBlack}
+                  alt={theme === "light" ? "Pulpor signature" : ""}
+                  aria-hidden={theme === "light" ? false : true}
+                  className={`h-16 ml-auto absolute inset-0 transition-opacity duration-300 ${theme === "light" ? "opacity-100" : "opacity-0"}`}
+                />
+              </div>
             </div>
           </div>
 

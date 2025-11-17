@@ -6,67 +6,85 @@ import market from '../assets/projects/market.png'
 
 const projects = [
   {
-    title: "E-Commerce Platform",
-    description: "A full-stack e-commerce solution with payment integration, inventory management, and real-time analytics.",
-    tags: ["React", "Node.js", "PostgreSQL", "Stripe"],
+    title: "Dashboard B3",
+    description: "O projeto é um dashboard de investimentos que calcula e exibe sua carteira da B3 — mostrando alocação, dividendos e indicadores — usando dados buscados pela função Edge no Supabase integrada ao Yahoo Finance.",
+    tags: ["React", "Vite", "Tailwind", "Supabase"],
     image: market,
-    category: "Web"
+    category: "Web",
+    repoUrl: "https://github.com/pulpor/Market", 
+    liveUrl: "https://pulpor-market.vercel.app/#"
   },
   {
-    title: "Task Management App",
+    title: "Sistema de RPG Educacional",
     description: "Collaborative task management tool with real-time updates, team workflows, and productivity insights.",
     tags: ["Next.js", "TypeScript", "Supabase", "Tailwind"],
     image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=600&fit=crop",
-    category: "Web"
+    category: "Web",
+    repoUrl: "https://github.com/pulpor/task-management-app",
+    liveUrl: "https://task-management-app.vercel.app",
   },
   {
-    title: "Portfolio Website",
+    title: "App Cardápio",
     description: "Modern portfolio showcase with animations, dark mode, and optimized performance for creative professionals.",
     tags: ["React", "Framer Motion", "Vite", "CSS"],
     image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&h=600&fit=crop",
-    category: "Design"
+    category: "Design",
+    repoUrl: "https://github.com/pulpor/portfolio-website",
+    liveUrl: "https://portfolio-website.vercel.app",
   },
   {
-    title: "Social Media Dashboard",
+    title: "Pulpor News",
     description: "Analytics dashboard for social media metrics with beautiful charts, data visualization, and export features.",
     tags: ["React", "Chart.js", "API Integration", "Redux"],
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop",
-    category: "Web"
+    category: "Web",
+    repoUrl: "https://github.com/pulpor/social-media-dashboard",
+    liveUrl: "https://social-media-dashboard.vercel.app",
   },
   {
-    title: "Mobile Banking App",
+    title: "Seller Console",
     description: "Secure mobile banking application with biometric authentication and real-time transactions.",
     tags: ["React Native", "Node.js", "MongoDB"],
     image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&h=600&fit=crop",
-    category: "Mobile"
+    category: "Mobile",
+    repoUrl: "https://github.com/pulpor/mobile-banking-app",
+    liveUrl: "https://mobile-banking-app.vercel.app",
   },
   {
     title: "AI Chatbot",
     description: "Intelligent chatbot with natural language processing and context-aware responses.",
     tags: ["Python", "TensorFlow", "NLP", "API"],
     image: "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=800&h=600&fit=crop",
-    category: "AI"
+    category: "AI",
+    repoUrl: "https://github.com/pulpor/ai-chatbot",
+    liveUrl: "https://ai-chatbot-demo.vercel.app",
   },
   {
     title: "Fitness Tracker",
     description: "Track workouts, nutrition, and progress with personalized recommendations.",
     tags: ["React Native", "Firebase", "Charts"],
     image: "https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=800&h=600&fit=crop",
-    category: "Mobile"
+    category: "Mobile",
+    repoUrl: "https://github.com/pulpor/fitness-tracker",
+    liveUrl: "https://fitness-tracker.vercel.app",
   },
   {
     title: "CRM System",
     description: "Customer relationship management system with pipeline tracking and automated workflows.",
     tags: ["Vue.js", "Laravel", "MySQL"],
     image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=600&fit=crop",
-    category: "Web"
+    category: "Web",
+    repoUrl: "https://github.com/pulpor/crm-system",
+    liveUrl: "https://crm-system.vercel.app",
   },
   {
     title: "Weather App",
     description: "Beautiful weather application with forecasts, maps, and severe weather alerts.",
     tags: ["React", "Weather API", "Geolocation"],
     image: "https://images.unsplash.com/photo-1592210454359-9043f067919b?w=800&h=600&fit=crop",
-    category: "Web"
+    category: "Web",
+    repoUrl: "https://github.com/pulpor/weather-app",
+    liveUrl: "https://weather-app.vercel.app",
   },
 ];
 
@@ -207,13 +225,38 @@ const Projects = () => {
                 </div>
 
                 <div className="flex gap-2">
-                  <Button variant="outline" size="sm" className="flex-1 text-xs">
-                    <Github className="mr-1 h-3 w-3" />
-                    Code
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    className="flex-1 text-xs"
+                    asChild
+                    disabled={!project.repoUrl}
+                  >
+                    <a
+                      href={project.repoUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center"
+                    >
+                      <Github className="mr-1 h-3 w-3" />
+                      Code
+                    </a>
                   </Button>
-                  <Button size="sm" className="flex-1 bg-gradient-primary hover:opacity-90 text-xs">
-                    <ExternalLink className="mr-1 h-3 w-3" />
-                    View
+                  <Button
+                    size="sm"
+                    className="flex-1 bg-gradient-primary hover:opacity-90 text-xs"
+                    asChild
+                    disabled={!project.liveUrl}
+                  >
+                    <a
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center"
+                    >
+                      <ExternalLink className="mr-1 h-3 w-3" />
+                      View
+                    </a>
                   </Button>
                 </div>
               </div>
