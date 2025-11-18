@@ -116,10 +116,16 @@
 @layer base {
   * {
     @apply border-border;
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='%235c86ff' d='M3 3l7.07 16.97 2.51-7.39 7.39-2.51z'/%3E%3C/svg%3E"), auto !important;
   }
 
   body {
     @apply bg-background text-foreground;
+  }
+  
+  /* Cursor específico para links e botões - mantém a mesma seta, só muda cor */
+  a, button, [role="button"] {
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='%237b5cff' d='M3 3l7.07 16.97 2.51-7.39 7.39-2.51z'/%3E%3C/svg%3E"), auto !important;
   }
 }
 

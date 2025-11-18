@@ -1,5 +1,11 @@
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Button } from "@/components/ui/button";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 import { ExternalLink, Github } from "lucide-react";
 import { useState } from "react";
 
@@ -177,9 +183,18 @@ const Projects = () => {
               
               <div className="p-5">
                 <h3 className="mb-2 text-xl font-bold line-clamp-1">{project.title}</h3>
-                <p className="mb-4 text-sm text-muted-foreground leading-relaxed line-clamp-2">
-                  {project.description}
-                </p>
+                <TooltipProvider delayDuration={200}>
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <p className="mb-4 text-sm text-muted-foreground leading-relaxed line-clamp-2">
+                        {project.description}
+                      </p>
+                    </TooltipTrigger>
+                    <TooltipContent className="max-w-xs" side="top">
+                      <p className="text-sm">{project.description}</p>
+                    </TooltipContent>
+                  </Tooltip>
+                </TooltipProvider>
                 
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.tags.slice(0, 5).map((tag, tagIndex) => (

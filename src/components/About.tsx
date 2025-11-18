@@ -13,7 +13,6 @@ const About = () => {
             </h2>
             <div className="w-20 h-1 mx-auto bg-gradient-primary rounded-full" />
           </div>
-
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6 animate-slide-up">
               <p className="text-lg text-muted-foreground leading-relaxed">

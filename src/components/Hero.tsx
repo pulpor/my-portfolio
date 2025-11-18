@@ -199,7 +199,7 @@ const Hero = () => {
                   const rect = e.currentTarget.getBoundingClientRect();
                   createConfetti(rect.left + rect.width / 2, rect.top + rect.height / 2);
                 }}
-                className="px-4 py-2 text-sm font-medium rounded-full text-primary border border-primary/20 cursor-pointer hover:bg-primary/10 hover:border-primary/30 hover:scale-105 transition-all duration-300 ease-out"
+                className="px-4 py-2 text-sm font-medium rounded-full text-primary border border-primary/20 hover:bg-primary/10 hover:border-primary/30 hover:scale-105 transition-all duration-300 ease-out"
               >
                 {t.hero.badge}
               </button>
