@@ -2,13 +2,17 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Github } from "lucide-react";
 import { useState } from "react";
+
 import market from '../assets/projects/market.png'
+import news from '../assets/projects/news.png'
+import rpg from '../assets/projects/rpg.png'
+
 
 const projects = [
   {
     title: "Dashboard B3",
-    description: "O projeto é um dashboard de investimentos que calcula e exibe sua carteira da B3 — mostrando alocação, dividendos e indicadores — usando dados buscados pela função Edge no Supabase integrada ao Yahoo Finance.",
-    tags: ["React", "Vite", "Tailwind", "Supabase"],
+    description: "Um dashboard de investimentos que calcula e exibe sua carteira da B3 — mostrando alocação, dividendos e indicadores — usando dados buscados pela função Edge no Supabase integrada ao Yahoo Finance.",
+    tags: ["React.js", "Vite", "Tailwind", "Supabase"],
     image: market,
     category: "Web",
     repoUrl: "https://github.com/pulpor/Market", 
@@ -16,30 +20,30 @@ const projects = [
   },
   {
     title: "Sistema de RPG Educacional",
-    description: "Collaborative task management tool with real-time updates, team workflows, and productivity insights.",
-    tags: ["Next.js", "TypeScript", "Supabase", "Tailwind"],
-    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=600&fit=crop",
+    description: "Sistema educacional gamificado integrado com inteligencia artificial que permite aos alunos enviar arquivos de código",
+    tags: ["JavaSript", "IA Gemini", "Firebase", "Tailwind"],
+    image: rpg,
     category: "Web",
-    repoUrl: "https://github.com/pulpor/task-management-app",
-    liveUrl: "https://task-management-app.vercel.app",
+    repoUrl: "",
+    liveUrl: "",
   },
   {
     title: "App Cardápio",
     description: "Modern portfolio showcase with animations, dark mode, and optimized performance for creative professionals.",
-    tags: ["React", "Framer Motion", "Vite", "CSS"],
+    tags: ["React.js", "Jest", "Vite", "CSS"],
     image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&h=600&fit=crop",
-    category: "Design",
-    repoUrl: "https://github.com/pulpor/portfolio-website",
-    liveUrl: "https://portfolio-website.vercel.app",
+    category: "Mobile",
+    repoUrl: "",
+    liveUrl: "",
   },
   {
     title: "Pulpor News",
-    description: "Analytics dashboard for social media metrics with beautiful charts, data visualization, and export features.",
-    tags: ["React", "Chart.js", "API Integration", "Redux"],
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop",
-    category: "Web",
-    repoUrl: "https://github.com/pulpor/social-media-dashboard",
-    liveUrl: "https://social-media-dashboard.vercel.app",
+    description: "É um portal de notícias em React que consome a API do IBGE, exibe as matérias e permite favoritar conteúdos com persistência local.",
+    tags: ["React.js", "Vite", "API Integration", "TypeScript"],
+    image: news,
+    category: "Web", 
+    repoUrl: "https://github.com/pulpor/News",
+    liveUrl: "https://pulpor.github.io/News",
   },
   {
     title: "Seller Console",
@@ -51,40 +55,13 @@ const projects = [
     liveUrl: "https://mobile-banking-app.vercel.app",
   },
   {
-    title: "AI Chatbot",
-    description: "Intelligent chatbot with natural language processing and context-aware responses.",
-    tags: ["Python", "TensorFlow", "NLP", "API"],
-    image: "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=800&h=600&fit=crop",
-    category: "AI",
-    repoUrl: "https://github.com/pulpor/ai-chatbot",
-    liveUrl: "https://ai-chatbot-demo.vercel.app",
-  },
-  {
-    title: "Fitness Tracker",
-    description: "Track workouts, nutrition, and progress with personalized recommendations.",
-    tags: ["React Native", "Firebase", "Charts"],
-    image: "https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=800&h=600&fit=crop",
+    title: "Gym",
+    description: "Secure mobile banking application with biometric authentication and real-time transactions.",
+    tags: ["React Native", "Node.js", "MongoDB"],
+    image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&h=600&fit=crop",
     category: "Mobile",
-    repoUrl: "https://github.com/pulpor/fitness-tracker",
-    liveUrl: "https://fitness-tracker.vercel.app",
-  },
-  {
-    title: "CRM System",
-    description: "Customer relationship management system with pipeline tracking and automated workflows.",
-    tags: ["Vue.js", "Laravel", "MySQL"],
-    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=600&fit=crop",
-    category: "Web",
-    repoUrl: "https://github.com/pulpor/crm-system",
-    liveUrl: "https://crm-system.vercel.app",
-  },
-  {
-    title: "Weather App",
-    description: "Beautiful weather application with forecasts, maps, and severe weather alerts.",
-    tags: ["React", "Weather API", "Geolocation"],
-    image: "https://images.unsplash.com/photo-1592210454359-9043f067919b?w=800&h=600&fit=crop",
-    category: "Web",
-    repoUrl: "https://github.com/pulpor/weather-app",
-    liveUrl: "https://weather-app.vercel.app",
+    repoUrl: "https://github.com/pulpor/mobile-banking-app",
+    liveUrl: "https://mobile-banking-app.vercel.app",
   },
 ];
 
@@ -94,7 +71,7 @@ const Projects = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const projectsPerPage = 6;
 
-  const categories = ["All", "Web", "Mobile", "Design", "AI"];
+  const categories = ["All", "Web", "Mobile"];
   
   const filteredProjects = selectedCategory === "All" 
     ? projects 
@@ -188,11 +165,7 @@ const Projects = () => {
                 <img
                   src={project.image}
                   alt={project.title}
-                  className={`w-full h-full object-cover transition-transform duration-500 ${
-                    project.image === market 
-                      ? "object-top group-hover:animate-scroll-preview" 
-                      : "group-hover:scale-110"
-                  }`}
+                  className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:animate-scroll-preview"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-card via-card/40 to-transparent opacity-60" />
                 <div className="absolute top-3 right-3">
