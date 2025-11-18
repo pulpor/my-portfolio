@@ -29,7 +29,7 @@ export const translations = {
       book: {
         title: "Meu Livro",
         description: "Um manual sarcástico e direto que ensina programação sem romantismo, só a verdade crua, lógica e risadas nervosas.",
-        buyButton: "Comprar Agora",
+        buyButton: "Buguei, Logo Existo",
       },
     },
     skills: {

@@ -5,7 +5,7 @@ const skills = [
   {
     icon: Code2,
     title: "Frontend Development",
-    description: "React, JavaScript, TypeScript, Tailwind CSS",
+    description: "React.js, JavaScript, TypeScript, Tailwind CSS",
     color: "text-blue-500",
   },
   {
@@ -23,7 +23,7 @@ const skills = [
   {
     icon: Cloud,
     title: "Cloud Services",
-    description: "AWS, Vercel, Supabase, Firebase",
+    description: "Vercel, Supabase, Firebase",
     color: "text-orange-500",
   },
   {

@@ -9,7 +9,7 @@ const ScrollToTop = () => {
   useEffect(() => {
     const onScroll = () => {
       if (!("IntersectionObserver" in window)) {
-        setVisible(window.scrollY > 200);
+        setVisible((window as Window).scrollY > 200);
       }
     };
 
